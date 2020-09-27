@@ -1,13 +1,15 @@
 import pandas as pd
 from api_test.API_Request import API_Request
-
+import datetime
 
 class Read_API_Data():
     def __init__(self):
         self.api_file = pd.read_excel("API.xls")
         self.api_num = self.api_file.shape[0]
         print("共有%d条数据" % self.api_num)
+
         self.log_file = open("log.txt", "a", encoding='utf-8')
+        self.log_file.write(str(datetime.datetime.now()) + "\n")
         self.log_file.write("共有%d条数据" % self.api_num + '\n')
 
     def execute_api(self):
@@ -23,7 +25,7 @@ class Read_API_Data():
             api_request = API_Request(api_data)
             response = api_request.request()
             print(response.url)
-            # print(response.text)
+            print(response.text)
             # print(api_data)
             if response.status_code != 200:
                 self.log_file.write("第%d条" % list_num + "\n")
