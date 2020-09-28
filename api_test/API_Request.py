@@ -5,7 +5,6 @@ from api_test import Request_Get_Token
 
 
 class API_Request():
-
     def __init__(self, api_data):
         self.url = api_data['url']
         self.method = api_data['method']

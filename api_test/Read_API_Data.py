@@ -2,14 +2,16 @@ import pandas as pd
 from api_test.API_Request import API_Request
 import datetime
 
+
 class Read_API_Data():
     def __init__(self):
         self.api_file = pd.read_excel("API.xls")
         self.api_num = self.api_file.shape[0]
         print("共有%d条数据" % self.api_num)
-
         self.log_file = open("log.txt", "a", encoding='utf-8')
+        self.log_file.write("-------------------------------------------------------------------" + "\n")
         self.log_file.write(str(datetime.datetime.now()) + "\n")
+        self.log_file.write("-------------------------------------------------------------------" + "\n")
         self.log_file.write("共有%d条数据" % self.api_num + '\n')
 
     def execute_api(self):
