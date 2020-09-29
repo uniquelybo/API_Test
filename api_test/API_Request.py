@@ -5,6 +5,7 @@ from api_test import Request_Get_Token
 
 
 class API_Request():
+    # 接收请求数据
     def __init__(self, api_data):
         self.url = api_data['url']
         self.method = api_data['method']
@@ -12,9 +13,13 @@ class API_Request():
         self.headers = api_data['headers']
         # print(api_data)
 
+    # 发送请求返回结果
     def request(self):
+        # 判断请求方式
         if self.method == "POST":
+            # 判断请求头是否为空
             if pd.isnull(self.headers):
+                # 判断请求携带数据是否为空
                 if pd.isnull(self.data):
                     response = requests.post(url=self.url)
                 else:

@@ -4,6 +4,7 @@ import datetime
 
 
 class Read_API_Data():
+    # 读取所有接口数据
     def __init__(self):
         self.api_file = pd.read_excel("API.xls")
         self.api_num = self.api_file.shape[0]
@@ -15,6 +16,7 @@ class Read_API_Data():
         self.log_file.write("共有%d条数据" % self.api_num + '\n')
 
     def execute_api(self):
+        # 对数据进行逐条发送请求并接收结果
         for list_num in range(1, self.api_num + 1):
             print("当前第%d条" % list_num)
             data = self.api_file['DATA'][list_num - 1]
@@ -29,6 +31,7 @@ class Read_API_Data():
             print(response.url)
             print(response.text)
             # print(api_data)
+            # 记录日志，为非200响应数据
             if response.status_code != 200:
                 self.log_file.write("第%d条" % list_num + "\n")
                 self.log_file.write("URL:%s" % response.url + "\n")
