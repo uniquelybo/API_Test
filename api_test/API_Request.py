@@ -1,8 +1,6 @@
 import requests
 import pandas as pd
 import json
-from api_test import Request_Get_Token
-
 
 class API_Request():
     def __init__(self, api_data, token):
