@@ -1,9 +1,0 @@
-
-test.py文件为启动程序入口
-Request_Get_Token.py文件作用获取一个token值
-Read_API_Data.py文件主要读取API信息，并转发信息，接收处理请求结果，打印异常信息日志
-API_Request.py文件主要用作判断处理API信息，并进行发送请求，返回结果
-log.txt日志信息
-API.xls接口信息
-
-未强化完成，暂未接入数据库

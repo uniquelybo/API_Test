@@ -14,7 +14,7 @@ class Read_API_Data():
         self.log_file.write(str(datetime.datetime.now()) + "\n")
         self.log_file.write("-------------------------------------------------------------------" + "\n")
         self.log_file.write("共有%d条数据" % self.api_num + '\n')
-        # self.token = Request_Get_Token.get_token()
+        self.token = Request_Get_Token.get_token()
 
     def execute_api(self):
         # 对数据进行逐条发送请求并接收结果
@@ -28,7 +28,7 @@ class Read_API_Data():
             json_data = self.api_file['json'][list_num - 1]
             url = host + url
             api_data = {"url": url, "method": method, "data": data, "json": json_data, "headers": headers}
-            api_request = API_Request(api_data)
+            api_request = API_Request(api_data, self.token)
             response = api_request.request()
             print(response.url)
             print(response.text)
