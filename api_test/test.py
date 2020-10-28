@@ -1,4 +1,4 @@
-from api_test.Read_API_Data import Read_API_Data
+from Read_API_Data import Read_API_Data
 import datetime
 
 if __name__ == "__main__":

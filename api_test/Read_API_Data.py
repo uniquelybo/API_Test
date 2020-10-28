@@ -1,7 +1,7 @@
 import pandas as pd
-from api_test.API_Request import API_Request
+from API_Request import API_Request
 import datetime
-from api_test import Request_Get_Token
+import Request_Get_Token
 
 class Read_API_Data():
     # 读取所有接口数据
