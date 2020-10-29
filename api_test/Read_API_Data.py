@@ -10,7 +10,7 @@ class Read_API_Data():
         self.api_num = self.api_file.shape[0]
         print("共有%d条数据" % self.api_num)
         self.log_file = open("log.txt", "a", encoding='utf-8')
-        self.log_file.fruncate()
+        self.log_file.fruncate(0)
         self.log_file.write("-------------------------------------------------------------------" + "\n")
         self.log_file.write(str(datetime.datetime.now()) + "\n")
         self.log_file.write("-------------------------------------------------------------------" + "\n")
